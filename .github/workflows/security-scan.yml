@@ -35,15 +35,16 @@ jobs:
           config-path: .github/gitleaks.toml
         continue-on-error: true
 
-      # Step 4: Upload Results as Artifacts
+      # Step 4: Upload SAST Results (Updated to v4)
       - name: 📂 Upload SAST Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: semgrep-results
           path: semgrep.sarif
 
+      # Step 5: Upload Gitleaks Results (Updated to v4)
       - name: 📂 Upload Gitleaks Results
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
           name: gitleaks-results
-          path: gitleaks.sarif≈
+          path: gitleaks.sarif
